@@ -4,7 +4,7 @@ Welcome to the Babbage Obsidian Plugins Repository, a collection of plugins desi
 
 ## Available Plugins
 
-### Secure Notes Plugin
+### [Secure Notes Plugin](https://github.com/p2ppsr/babbage-obsidian-plugins/tree/master/secure-notes-plugin)
 
 - **Encrypt Note**: Securely encrypt selected text within your notes using keys derived from your MetaNet identity for top-tier data protection.
 - **Decrypt Note**: Effortlessly decrypt your encrypted text to its original form, maintaining the integrity and confidentiality of your information.
