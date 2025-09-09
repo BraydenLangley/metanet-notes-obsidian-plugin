@@ -3,7 +3,7 @@
 	"name": "SecureNotes",
 	"version": "0.1.0",
 	"minAppVersion": "0.15.0",
-	"description": "Demonstrates note encryption/decryption using the Babbage SDK in conjunction with the Obsidian API.",
+        "description": "Save and load encrypted notes from your wallet using the @bsv/sdk LocalKVStore.",
 	"author": "Peer-to-peer Privacy Systems Research LLC",
 	"authorUrl": "https://projectbabbage.com",
 	"isDesktopOnly": true
