@@ -1,7 +1,7 @@
 {
-	"name": "secure-notes-plugin",
+	"name": "metanet-notes",
 	"version": "0.1.0",
-        "description": "Store encrypted notes in a wallet using the @bsv/sdk LocalKVStore.",
+  "description": "Own your notes.",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",

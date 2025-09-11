@@ -4,7 +4,7 @@ Welcome to the Metanet Obsidian Plugins Repository, a collection of plugins desi
 
 ## Available Plugins
 
-### [Secure Notes Plugin](./secure-notes-plugin)
+### [Secure Notes Plugin](./metanet-notes)
 
 - **Save Note to Wallet** – Persist the current note's contents to the wallet's `LocalKVStore` in a local `notes` basket.
 - **Load Note from Wallet** – Replace the current note with the encrypted version stored in the wallet.
@@ -21,7 +21,7 @@ Interested in contributing or building your own plugin with the `@bsv/sdk`? Foll
 ### Development Setup
 
 1. **Clone the Repository** – Clone this repository to your desired development location. For testing convenience, consider cloning it into your Obsidian vault's plugins folder, e.g., `YourVault/.obsidian/plugins/`.
-2. **Install Dependencies** – Navigate to the plugin's directory you wish to work on, such as `secure-notes-plugin`, and run `npm install` to install necessary dependencies.
+2. **Install Dependencies** – Navigate to the plugin's directory you wish to work on, such as `metanet-notes`, and run `npm install` to install necessary dependencies.
 3. **Start Development** – Run `npm run dev` to compile TypeScript (`main.ts`) into JavaScript (`main.js`) in watch mode. Changes you make will automatically recompile.
 
 ### Testing Plugins

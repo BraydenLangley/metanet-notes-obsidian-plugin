@@ -1,6 +1,6 @@
 {
-	"id": "secure-notes",
-	"name": "SecureNotes",
+	"id": "metanet-notes",
+	"name": "metanet-notes",
 	"version": "0.1.0",
 	"minAppVersion": "0.15.0",
         "description": "Save and load encrypted notes from your wallet using the @bsv/sdk LocalKVStore.",
