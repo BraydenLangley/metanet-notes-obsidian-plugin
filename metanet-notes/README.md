@@ -10,6 +10,25 @@ This plugin bridges the gap between Obsidian and the BSV ecosystem by:
 - **Privacy-First**: All notes are encrypted client-side before storage
 - **Ownership**: You control your data through your BSV wallet
 
+## Requirements
+
+**⚠️ Important**: This plugin requires either **Metanet Desktop** or **Metanet Mobile** to be installed and running on your system.
+
+The plugin uses the `@bsv/sdk` `LocalKVStore` which depends on a BSV wallet infrastructure provided by:
+
+- **[Metanet Desktop](https://github.com/bsv-blockchain/metanet-desktop)** - Desktop wallet application for Windows, macOS, and Linux
+- **[Metanet Mobile](https://github.com/bsv-blockchain/metanet-mobile)** - Mobile wallet application for iOS and Android
+
+Without one of these wallet applications running, the plugin will not be able to:
+- Create or access the encrypted note storage
+- Perform wallet-based encryption/decryption
+- Sync notes across devices and applications
+
+### Installation Order
+1. First, install and set up **Metanet Desktop** or **Metanet Mobile**
+2. Ensure your wallet is properly configured and funded (if needed)
+3. Then install and configure this Obsidian plugin
+
 ## Features
 
 ### 🔄 **Automatic Synchronization**
