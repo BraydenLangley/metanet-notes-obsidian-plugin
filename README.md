@@ -4,7 +4,7 @@ Welcome to the Metanet Obsidian Plugins Repository, a collection of plugins desi
 
 ## Available Plugins
 
-### [Secure Notes Plugin](./metanet-notes)
+### [Metanet Notes Plugin](./metanet-notes)
 
 - **Save Note to Wallet** – Persist the current note's contents to the wallet's `LocalKVStore` in a local `notes` basket.
 - **Load Note from Wallet** – Replace the current note with the encrypted version stored in the wallet.
@@ -27,7 +27,7 @@ Interested in contributing or building your own plugin with the `@bsv/sdk`? Foll
 ### Testing Plugins
 
 1. **Load in Obsidian** – Open Obsidian, go to `Settings` > `Community Plugins`, and ensure the plugin you're developing is listed and enabled.
-2. **Feature Testing** – Use the plugin's features, such as the commands "Save Note to Wallet" and "Load Note from Wallet" in the Secure Notes Plugin, to test functionality.
+2. **Feature Testing** – Use the plugin's features, such as the commands "Save Note to Wallet" and "Load Note from Wallet" in the Metanet Notes Plugin, to test functionality.
 
 ## Documentation & Resources
 
