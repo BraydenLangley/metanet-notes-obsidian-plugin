@@ -1,39 +1,135 @@
-# Metanet Obsidian Plugins Repository
+# Metanet Notes Plugin for Obsidian
 
-Welcome to the Metanet Obsidian Plugins Repository, a collection of plugins designed to enhance your Obsidian experience. These plugins use the [`@bsv/sdk`](https://www.npmjs.com/package/@bsv/sdk) to integrate with your wallet for secure storage and other capabilities.
+A powerful Obsidian plugin that synchronizes your notes with the BSV blockchain using the [`@bsv/sdk`](https://www.npmjs.com/package/@bsv/sdk) `LocalKVStore`. Your notes are encrypted and stored in your wallet's local storage, enabling seamless synchronization across devices and applications while maintaining complete privacy and ownership.
 
-## Available Plugins
+## Purpose
 
-### [Metanet Notes Plugin](./metanet-notes)
+This plugin bridges the gap between Obsidian and the BSV ecosystem by:
+- **Decentralized Storage**: Store notes in your personal BSV wallet rather than centralized cloud services
+- **Cross-Application Sync**: Share notes between Obsidian and other BSV applications using the same wallet
+- **Privacy-First**: All notes are encrypted client-side before storage
+- **Ownership**: You control your data through your BSV wallet
 
-- **Save Note to Wallet** – Persist the current note's contents to the wallet's `LocalKVStore` in a local `notes` basket.
-- **Load Note from Wallet** – Replace the current note with the encrypted version stored in the wallet.
+## Requirements
 
-## Getting Started for Developers
+**⚠️ Important**: This plugin requires either **Metanet Desktop** or **Metanet Mobile** to be installed and running on your system.
 
-Interested in contributing or building your own plugin with the `@bsv/sdk`? Follow these steps:
+The plugin uses the `@bsv/sdk` `LocalKVStore` which depends on a BSV wallet infrastructure provided by:
 
-### Prerequisites
+- **[Metanet Desktop](https://github.com/bsv-blockchain/metanet-desktop)** - Desktop wallet application for Windows, macOS, and Linux
+- **[Metanet Mobile](https://github.com/bsv-blockchain/metanet-mobile)** - Mobile wallet application for iOS and Android
 
-- Ensure [Node.js](https://nodejs.org/) is installed (version 16 or higher recommended).
-- Get familiar with the Obsidian plugin development environment.
+Without one of these wallet applications running, the plugin will not be able to:
+- Create or access the encrypted note storage
+- Perform wallet-based encryption/decryption
+- Sync notes across devices and applications
 
-### Development Setup
+### Installation Order
+1. First, install and set up **Metanet Desktop** or **Metanet Mobile**
+2. Ensure your wallet is properly configured and funded (if needed)
+3. Then install and configure this Obsidian plugin
 
-1. **Clone the Repository** – Clone this repository to your desired development location. For testing convenience, consider cloning it into your Obsidian vault's plugins folder, e.g., `YourVault/.obsidian/plugins/`.
-2. **Install Dependencies** – Navigate to the plugin's directory you wish to work on, such as `metanet-notes`, and run `npm install` to install necessary dependencies.
-3. **Start Development** – Run `npm run dev` to compile TypeScript (`main.ts`) into JavaScript (`main.js`) in watch mode. Changes you make will automatically recompile.
+## Features
 
-### Testing Plugins
+### 🔄 **Automatic Synchronization**
+- **Auto-save**: Automatically saves notes as you type (configurable debounce)
+- **Smart Change Detection**: Only saves when content actually changes
+- **Auto-sync**: Detects and creates new notes from external applications
+- **File Mirroring**: Keeps wallet in sync with Obsidian file operations (rename/delete)
 
-1. **Load in Obsidian** – Open Obsidian, go to `Settings` > `Community Plugins`, and ensure the plugin you're developing is listed and enabled.
-2. **Feature Testing** – Use the plugin's features, such as the commands "Save Note to Wallet" and "Load Note from Wallet" in the Metanet Notes Plugin, to test functionality.
+### 💾 **Manual Operations**
+- **Save to Wallet**: Manually save the current note to your wallet
+- **Load from Wallet**: Replace current note with wallet version
+- **Sync from Wallet**: Refresh current note with latest wallet content
+- **Restore Missing Notes**: Recreate notes that exist in wallet but not in vault
 
-## Documentation & Resources
+### 🔍 **Smart Detection**
+- **New Note Detection**: Automatically discovers notes added by external applications
+- **Content Comparison**: Prevents unnecessary operations when content is identical
+- **Conflict Resolution**: Clear feedback when sync operations occur
 
-- For an in-depth guide on Obsidian plugin development, visit the [official API documentation](https://github.com/obsidianmd/obsidian-api).
-- To learn more about the `@bsv/sdk`, see the [package on npm](https://www.npmjs.com/package/@bsv/sdk).
+### ⚙️ **Flexible Configuration**
+- **Save Modes**: Choose between automatic or manual saving
+- **Trigger Options**: Save on file switch, window blur, or app quit
+- **Auto-creation Control**: Enable/disable automatic creation of new notes
+- **File Mirroring**: Control whether file operations sync to wallet
+
+## Usage Instructions
+
+### Getting Started
+
+1. Install the plugin in your Obsidian vault
+2. The plugin will automatically create a `LocalKVStore` with the identifier `'notes'`
+3. All notes are encrypted using your wallet's key derivation
+
+### Commands (via Command Palette - Ctrl/Cmd+P)
+
+- **"Save note to wallet"** - Manually save the current note
+- **"Load note from wallet"** - Replace current note with wallet version
+- **"Sync note from wallet"** - Refresh current note with latest wallet content
+- **"Restore note from wallet"** - Browse and restore any note from wallet
+- **"Detect and create new notes from wallet"** - Manually check for new notes
+
+### Automatic Behaviors
+
+When **Auto-save mode** is enabled:
+- Notes save automatically after stopping typing (configurable delay)
+- Optional save triggers on file switching, window blur, or app close
+- New notes from external apps are detected every 30 seconds
+
+### External Application Integration
+
+Other BSV applications can add notes by:
+1. Using the same `LocalKVStore` with identifier `'notes'`
+2. Storing content with the file path as the key
+3. Adding the path to the index key `'__wallet_index__'`
+
+## Configuration Options
+
+Access settings via **Settings → Plugin Options → Metanet Notes**
+
+### Save Behavior
+- **Save Mode**: Choose "Auto-save" or "Manual only"
+- **Auto-save Debounce**: Delay in milliseconds after last edit (default: 1000ms)
+- **Save on File Switch**: Auto-save when switching between files
+- **Save on Window Blur**: Auto-save when Obsidian loses focus
+- **Save on Quit**: Attempt save when closing Obsidian
+
+### Synchronization
+- **Auto-create New Notes**: Automatically create notes found in wallet
+- **Mirror Deletes to Wallet**: Remove wallet copies when files are deleted in Obsidian
+- **Prompt Before Overwriting**: Show confirmation before replacing file contents (future feature)
+
+## Use Cases
+
+### Personal Knowledge Management
+- Sync your personal notes across multiple devices using your BSV wallet
+- Access notes from both Obsidian and BSV-compatible applications
+
+### Collaborative and Cross-Platform Workflows
+- Share note collections by sharing basket access across apps.
+- Use Obsidian on desktop and Metanet Mobile seamlessly
+- Maintain consistent note access regardless of platform
+
+### Backup and Recovery
+- Your notes are backed up in your wallet's persistent storage
+- Restore entire note collections even if Obsidian vault is lost
+
+## Development
+
+1. Install dependencies: `npm install`
+2. Build the plugin: `npm run build`
+3. Copy the compiled files into your Obsidian vault's `.obsidian/plugins/metanet-notes/` folder
+4. Enable the plugin in Obsidian settings
+
+## Technical Details
+
+- **Storage**: Uses `@bsv/sdk` `LocalKVStore` with basket identifier `'notes'`
+- **Encryption**: All content encrypted client-side using [BRC-42](https://github.com/bitcoin-sv/BRCs/blob/master/key-derivation/0042.md) key-derivation and [BRC-2](https://github.com/bitcoin-sv/BRCs/blob/master/wallet/0002.md) encryption.
+- **Indexing**: Maintains a searchable index of all stored note paths
+- **Change Detection**: Tracks content hashes to prevent unnecessary operations
+- **Error Handling**: Graceful fallbacks and user-friendly error messages
 
 ## License
 
-All code in this repository is licensed under the Open BSV License.
+Open BSV License.
