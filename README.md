@@ -1,6 +1,6 @@
-# MetaNet Obsidian Plugins Repository
+# Metanet Obsidian Plugins Repository
 
-Welcome to the MetaNet Obsidian Plugins Repository, a collection of plugins designed to enhance your Obsidian experience. These plugins use the [`@bsv/sdk`](https://www.npmjs.com/package/@bsv/sdk) to integrate with your wallet for secure storage and other capabilities.
+Welcome to the Metanet Obsidian Plugins Repository, a collection of plugins designed to enhance your Obsidian experience. These plugins use the [`@bsv/sdk`](https://www.npmjs.com/package/@bsv/sdk) to integrate with your wallet for secure storage and other capabilities.
 
 ## Available Plugins
 
