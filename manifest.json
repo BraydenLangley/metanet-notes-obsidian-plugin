@@ -1,9 +1,9 @@
 {
 	"id": "metanet-notes",
-	"name": "metanet-notes",
+	"name": "Metanet Notes",
 	"version": "0.1.0",
 	"minAppVersion": "0.15.0",
-        "description": "Save and load encrypted notes from your wallet using the @bsv/sdk LocalKVStore.",
+        "description": "Own your notes.",
 	"author": "Peer-to-peer Privacy Systems Research LLC",
 	"authorUrl": "https://projectbabbage.com",
 	"isDesktopOnly": true
