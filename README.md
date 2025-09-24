@@ -12,7 +12,7 @@ This plugin bridges the gap between Obsidian and the BSV ecosystem by:
 
 ## Requirements
 
-**⚠️ Important**: This plugin requires either **Metanet Desktop** or **Metanet Mobile** to be installed and running on your system.
+**Important**: This plugin requires either **Metanet Desktop** or **Metanet Mobile** to be installed and running on your system.
 
 The plugin uses the `@bsv/sdk` `LocalKVStore` which depends on a BSV wallet infrastructure provided by:
 
